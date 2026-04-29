@@ -1,3 +1,4 @@
+# 1. IMPORT
 import streamlit as st
 import pandas as pd
 import os
@@ -5,14 +6,16 @@ import plotly.express as px
 from sklearn.preprocessing import StandardScaler
 from sklearn.cluster import KMeans
 
-# CONFIG
 st.set_page_config(page_title="Dashboard E-Commerce", layout="wide")
 
-# LOAD DATA
 @st.cache_data
 def load_data():
-    BASE_DIR = os.path.dirname(os.path.dirname(__file__))
-    file_path = os.path.join(BASE_DIR, "dashboard", "main_data.csv")
+    BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+    file_path = os.path.join(BASE_DIR, "main_data.csv")
+
+    if not os.path.exists(file_path):
+        st.error(f"File tidak ditemukan: {file_path}")
+        return pd.DataFrame()
 
     df = pd.read_csv(file_path)
 
@@ -23,6 +26,9 @@ def load_data():
     return df
 
 df = load_data()
+
+if df.empty:
+    st.stop()
 
 # SIDEBAR
 st.sidebar.title("🔎 Filter")
@@ -111,9 +117,8 @@ st.plotly_chart(fig, use_container_width=True)
 
 st.caption("Distribusi difilter (1%–99%) agar outlier ekstrem tidak merusak pola utama.")
 
-# =========================
+
 # RFM FIX (ANTI ERROR)
-# =========================
 
 st.subheader("👤 RFM Segmentation")
 
