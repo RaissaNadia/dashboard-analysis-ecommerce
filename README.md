@@ -90,7 +90,7 @@ submission
 
 Dashboard dapat diakses melalui link berikut:
 
-https://.streamlit.app
+https://dashboard-analysis-ecommerce-goeuakluep969a2q3u3kjd.streamlit.app/
 
 
 ## 👤 Author
