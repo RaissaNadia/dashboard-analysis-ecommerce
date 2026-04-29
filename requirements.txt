@@ -1,0 +1,9 @@
+streamlit
+pandas
+plotly
+scikit-learn
+numpy
+os
+matplotlib
+seaborn
+scipy
