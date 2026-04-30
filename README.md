@@ -52,10 +52,20 @@ Dashboard interaktif dibuat menggunakan Streamlit dan menampilkan:
 - Analisis wilayah
 
 ---
+## 📊 Dashboard
+🔗 Link Dashboard:  
+https://dashboard-analysis-ecommerce-goeuakluep969a2q3u3kjd.streamlit.app/
 
-## ⚙️ Cara Menjalankan Dashboard
+---
 
-1. Install dependencies:
+## ⚙️ Cara Menjalankan Project
+
+### 1. Clone Repository
+```bash
+git clone https://github.com/RaissaNadia/dashboard-analysis-ecommerce.git
+cd dashboard-analysis-ecommerce
+
+2. Install dependencies:
 ```
 pip install -r requirements.txt
 
